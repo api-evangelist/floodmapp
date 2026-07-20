@@ -1,0 +1,32 @@
+generated: '2026-07-19'
+method: searched
+source: >-
+  Observed live 302 redirect from https://api.floodmapp.com to the AWS Cognito
+  hosted-UI OAuth2 authorization endpoint (login.floodmapp.com/oauth2/authorize).
+summary:
+  types: [oauth2, openIdConnect]
+  oauth2_flows: [authorizationCode]
+  provider: AWS Cognito (login.floodmapp.com)
+notes: >-
+  FloodMapp's authenticated API surface at api.floodmapp.com is protected by an
+  AWS Cognito user pool. Unauthenticated requests are redirected to the Cognito
+  hosted UI to complete an OAuth2 authorization-code flow. The 'openid' scope in
+  the observed request indicates OpenID Connect. Customer API credentials are
+  provisioned per the FAQ ("user credentials providing access within hours");
+  there is no public self-service developer portal. Token and JWKS endpoints
+  follow AWS Cognito conventions for the login.floodmapp.com domain.
+schemes:
+  - name: cognitoOAuth2
+    type: oauth2
+    provider: AWS Cognito
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://login.floodmapp.com/oauth2/authorize
+        tokenUrl: https://login.floodmapp.com/oauth2/token
+        scopes:
+          openid: OpenID Connect authentication
+    evidence:
+      - observed_client_id: 2a03sn0qcnvtcod1jvvgah7535
+      - observed_response_type: code
+      - observed_scope: openid
+      - redirect_uri: https://api.floodmapp.com/oauth2/idpresponse
