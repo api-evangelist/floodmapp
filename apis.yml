@@ -1,21 +1,64 @@
 aid: floodmapp
 name: FloodMapp
-description: FloodMapp is a company surfaced as a portfolio company of union-square-ventures and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  FloodMapp is a flood intelligence technology company that provides real-time,
+  impact-based flood forecasting and mapping for emergency managers, government
+  agencies, and critical infrastructure operators. Its AI-driven hydrology and
+  hydraulics models deliver street-level (1-meter resolution) flood impact
+  forecasts, updated hourly, 24/7/365, using live rainfall, river and coastal
+  gauge networks, and terrain data. Capabilities ship as three products —
+  ForeCast (predictive), NowCast (real-time), and PostCast (post-event) —
+  packaged into PREPARE and RESPOND solutions. FloodMapp delivers its data as
+  GIS-native live feeds (OGC WMS/WFS layers) that integrate directly into Esri
+  ArcGIS, ArcGIS Online, Google, Mapbox, and QGIS. The authenticated API surface
+  at api.floodmapp.com is protected by AWS Cognito OAuth2/OIDC. FloodMapp is SOC 2
+  Type II certified and serves customers across the United States and Australia.
 url: https://raw.githubusercontent.com/api-evangelist/floodmapp/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - union-square-ventures
-x-tier: stub
+x-tier: enriched
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Flood Intelligence
+- Flood Forecasting
+- Geospatial
+- GIS
+- Emergency Management
+- Climate Risk
+- Machine Learning
+- Hydrology
+image: https://www.floodmapp.com
+apis:
+- name: FloodMapp Flood Intelligence API
+  description: >-
+    Authenticated flood forecasting and impact data delivered as GIS-native OGC
+    WMS/WFS feeds, secured by AWS Cognito OAuth2/OIDC. Access is provisioned per
+    customer; there is no public self-service developer portal.
+  humanURL: https://www.floodmapp.com/products
+  baseURL: https://api.floodmapp.com
+  properties:
+  - type: Authentication
+    url: authentication/floodmapp-authentication.yml
+  - type: OAuthScopes
+    url: scopes/floodmapp-scopes.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -24,3 +67,34 @@ maintainers:
 common:
 - type: Website
   url: https://www.floodmapp.com
+- type: Support
+  url: https://www.floodmapp.com/contact
+- type: Blog
+  url: https://www.floodmapp.com/news
+- type: PrivacyPolicy
+  url: https://www.floodmapp.com/general-4
+- type: Login
+  url: https://login.floodmapp.com
+- type: MCPServer
+  url: mcp/floodmapp-mcp.yml
+- type: LLMsTxt
+  url: llms/floodmapp-llms.txt
+- type: Authentication
+  url: authentication/floodmapp-authentication.yml
+- type: OAuthScopes
+  url: scopes/floodmapp-scopes.yml
+- type: WellKnown
+  url: well-known/floodmapp-well-known.yml
+- type: Conformance
+  url: conformance/floodmapp-conformance.yml
+- type: Compliance
+  url: conformance/floodmapp-conformance.yml
+- type: TrustCenter
+  url: security/floodmapp-trust-center.yml
+- type: DomainSecurity
+  url: security/floodmapp-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

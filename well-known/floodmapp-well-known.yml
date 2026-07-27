@@ -1,0 +1,31 @@
+generated: '2026-07-19'
+method: searched
+host: https://www.floodmapp.com
+documents:
+  - path: /.well-known/security.txt
+    status: 400
+  - path: /.well-known/openid-configuration
+    status: 400
+  - path: /.well-known/oauth-authorization-server
+    status: 400
+  - path: /.well-known/api-catalog
+    status: 400
+  - path: /.well-known/ai-plugin.json
+    status: 400
+other:
+  - path: /llms.txt
+    host: https://www.floodmapp.com
+    status: 200
+    file: ../llms/floodmapp-llms.txt
+    note: Wix-generated llms.txt advertising a Model Context Protocol endpoint.
+  - path: /.well-known/openid-configuration
+    host: https://login.floodmapp.com
+    status: 404
+    note: >-
+      api.floodmapp.com auth is an AWS Cognito user pool; Cognito serves OIDC
+      discovery under a user-pool path, not the custom-domain root, so the
+      root well-known returns 404.
+notes: >-
+  The Wix-hosted marketing domain rejects /.well-known/* paths with HTTP 400
+  (WAF). No security.txt, OIDC discovery, or api-catalog document is published
+  at the web host. Absence recorded as valid data.

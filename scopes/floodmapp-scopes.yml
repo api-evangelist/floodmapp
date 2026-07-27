@@ -1,0 +1,22 @@
+generated: '2026-07-19'
+method: searched
+source: >-
+  Observed OAuth2 authorization request from api.floodmapp.com to AWS Cognito
+  (login.floodmapp.com/oauth2/authorize).
+schemes:
+  - name: cognitoOAuth2
+    provider: AWS Cognito
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://login.floodmapp.com/oauth2/authorize
+        tokenUrl: https://login.floodmapp.com/oauth2/token
+scopes:
+  - scope: openid
+    description: OpenID Connect authentication; returns an ID token identifying the authenticated principal.
+    flows: [authorizationCode]
+    sources: [observed authorization request]
+notes: >-
+  Only the standard OIDC 'openid' scope was observed in the public authorization
+  redirect. FloodMapp does not publish a scopes/permissions reference; any
+  resource-server scopes are provisioned privately per customer. Not fabricated
+  beyond the single observed scope.
