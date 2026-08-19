@@ -4,30 +4,37 @@ status: published
 source: https://www.floodmapp.com/llms.txt
 server:
   name: floodmapp-site
-  description: >-
-    FloodMapp's public website exposes a Model Context Protocol (MCP) endpoint
-    via the Wix Site MCP platform. It provides live, up-to-date public site
-    content and business-solution APIs to AI agents with no scraping required.
-    Only public information is accessible; no authentication is required to
-    connect. This is a Wix-managed site MCP, not a bespoke FloodMapp
-    flood-data API server.
+  description: FloodMapp's public website exposes a Model Context Protocol (MCP) endpoint via the Wix
+    Site MCP platform. It provides live, up-to-date public site content and business-solution APIs to
+    AI agents with no scraping required. Only public information is accessible; no authentication is required
+    to connect. This is a Wix-managed site MCP, not a bespoke FloodMapp flood-data API server.
   transport: http
   url: https://www.floodmapp.com/_api/mcp
   platform: Wix Site MCP
   docs: https://dev.wix.com/docs/develop-websites/articles/get-started/about-the-wix-site-mcp
   auth_required: false
 tools:
-  - name: GetBusinessDetails
-    description: Retrieves business and site details such as timezone, email, phone, and address.
-  - name: SearchInSite
-    description: Searches the site for information.
-  - name: SearchSiteApiDocs
-    description: Retrieves the API documentation for the Wix business solutions installed on this site and informs the AI client how to use them.
-  - name: GenerateVisitorToken
-    description: Creates a new visitor session and obtains a visitor access token for the site.
-  - name: CallWixSiteAPI
-    description: Calls API methods on the site to perform actions on a visitor's behalf (query data, book, start a purchase).
-  - name: ReadFullDocsArticle
-    description: Fetches a complete article from the Wix developer documentation portal.
-  - name: ReadFullDocsMethodSchema
-    description: Fetches the full schema for a Wix API method.
+- name: GetBusinessDetails
+  description: Retrieves business and site details such as timezone, email, phone, and address.
+- name: SearchInSite
+  description: Searches the site for information.
+- name: SearchSiteApiDocs
+  description: Retrieves the API documentation for the Wix business solutions installed on this site and
+    informs the AI client how to use them.
+- name: GenerateVisitorToken
+  description: Creates a new visitor session and obtains a visitor access token for the site.
+- name: CallWixSiteAPI
+  description: Calls API methods on the site to perform actions on a visitor's behalf (query data, book,
+    start a purchase).
+- name: ReadFullDocsArticle
+  description: Fetches a complete article from the Wix developer documentation portal.
+- name: ReadFullDocsMethodSchema
+  description: Fetches the full schema for a Wix API method.
+deployment:
+  mode: remote
+  endpoint: https://www.floodmapp.com/_api/mcp
+  verified: probed
+  probe: live
+  tools: 9
+  checked: '2026-08-12'
+  source: catalog MCP census
