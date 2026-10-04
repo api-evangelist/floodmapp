@@ -54,7 +54,7 @@ tags:
 - GIS
 - Emergency Management
 - Climate Risk
-- Machine-Learning
+- Machine Learning
 - Hydrology
 tags_raw:
 - Company
@@ -66,6 +66,7 @@ tags_raw:
 - Climate Risk
 - Machine Learning
 - Hydrology
+- Machine-Learning
 image: https://www.floodmapp.com
 apis:
 - name: FloodMapp Flood Intelligence API
