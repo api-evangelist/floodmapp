@@ -45,7 +45,7 @@ accessModel:
   method: derived
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-19'
+modified: '2026-10-06'
 tags:
 - Company
 - Flood Intelligence
@@ -87,6 +87,10 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- url: https://www.floodmapp.com/blog
+  type: Blog
+- url: https://www.floodmapp.com/blog-feed.xml
+  type: BlogRSS
 - type: Website
   url: https://www.floodmapp.com
 - type: Support
