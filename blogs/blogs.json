@@ -2,6 +2,27 @@
   "repo": "floodmapp",
   "feeds": [
     {
+      "source": "https://www.floodmapp.com/blog",
+      "feed_url": "https://www.floodmapp.com/blog",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://www.floodmapp.com/news",
+      "feed_url": "https://www.floodmapp.com/news",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://www.floodmapp.com/blog-feed.xml",
+      "feed_url": "https://www.floodmapp.com/blog-feed.xml",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
       "source": "https://www.floodmapp.com/contact",
       "feed_url": "https://www.floodmapp.com/contact",
       "title": "",
@@ -10,5 +31,5 @@
     }
   ],
   "post_count": 0,
-  "fetched": "2026-10-03T12:30:02Z"
+  "fetched": "2026-10-10T13:15:00Z"
 }
